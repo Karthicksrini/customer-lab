@@ -166,9 +166,7 @@ function Button(){
     useEffect(()=>{
        let retrievedData=JSON.parse(localStorage.getItem("userData"));
        console.log(retrievedData);
-       if(retrievedData===null){
-        setTable(null);
-       }else{
+       if(retrievedData!==null){
         setTable(retrievedData);
        }
     },[]);
