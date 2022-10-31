@@ -164,9 +164,10 @@ function Button(){
     const [table,setTable]=useState([]);
 
     useEffect(()=>{
+        let retrievedData=localStorage.getItem("userData");
        if(retrievedData!==null){
-        let retrievedData=JSON.parse(localStorage.getItem("userData"));
-        setTable(retrievedData);
+        let retrievedData1=JSON.parse(localStorage.getItem("userData"));
+        setTable(retrievedData1);
        }
     },[]);
          const selections=
