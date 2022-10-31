@@ -164,9 +164,8 @@ function Button(){
     const [table,setTable]=useState([]);
 
     useEffect(()=>{
-       let retrievedData=JSON.parse(localStorage.getItem("userData"));
-       console.log(retrievedData);
        if(retrievedData!==null){
+        let retrievedData=JSON.parse(localStorage.getItem("userData"));
         setTable(retrievedData);
        }
     },[]);
@@ -225,14 +224,14 @@ function Button(){
                 "segment_name":SegmentName,
                 "schemas":[...FinalTraits]
             }
-             let temp=localStorage.getItem("userData");
+             let temp=window.localStorage.getItem("userData");
              console.log(temp)
              if(temp===null){
-                localStorage.setItem("userData",JSON.stringify([save]));
+                window.localStorage.setItem("userData",JSON.stringify([save]));
              }else{
                 let temp1=JSON.parse(temp);
                 let temp2=[...temp1,save];
-                localStorage.setItem("userData",JSON.stringify(temp2));
+                window.localStorage.setItem("userData",JSON.stringify(temp2));
 
              }    
             window.location.reload(false);
