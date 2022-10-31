@@ -162,12 +162,15 @@ function Button(){
         )
     }
     const [table,setTable]=useState([]);
-      localStorage.setItem("userData",[]);
+
     useEffect(()=>{
        let retrievedData=JSON.parse(localStorage.getItem("userData"));
        console.log(retrievedData);
-       setTable(retrievedData);
-       
+       if(retrievedData===null){
+        setTable([])
+       }else{
+        setTable(retrievedData);
+       }
     },[]);
          const selections=
          [{Label:"First_Name",Value:"first_name"},
@@ -225,8 +228,8 @@ function Button(){
                 "schemas":[...FinalTraits]
             }
              let temp=localStorage.getItem("userData");
-
-             if(temp===[]){
+             console.log(temp)
+             if(temp===null){
                 localStorage.setItem("userData",JSON.stringify([save]));
              }else{
                 let temp1=JSON.parse(temp);
