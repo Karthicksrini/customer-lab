@@ -167,7 +167,7 @@ function Button(){
        let retrievedData=JSON.parse(localStorage.getItem("userData"));
        console.log(retrievedData);
        if(retrievedData===null){
-        setTable([])
+        setTable(null);
        }else{
         setTable(retrievedData);
        }
