@@ -162,6 +162,7 @@ function Button(){
         )
     }
     const [table,setTable]=useState([]);
+      localStorage.setItem("userData",[]);
     useEffect(()=>{
        let retrievedData=JSON.parse(localStorage.getItem("userData"));
        console.log(retrievedData);
