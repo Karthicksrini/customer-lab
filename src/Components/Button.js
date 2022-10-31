@@ -143,7 +143,7 @@ const BottomBut=styled.button`
   border:2px solid white;
   cursor:pointer;
   border-radius:10px;
-  background-color:${props=>props.type=="submit"?"#32a2a8":"red"};
+  background-color:${props=>props.type==="submit"?"#32a2a8":"red"};
   color:white;
   
   
